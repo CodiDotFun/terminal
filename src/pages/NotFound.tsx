@@ -25,3 +25,5 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
+//"error resolved" updates needs to be done before "ptaching error"//
