@@ -22,3 +22,6 @@ const Index = () => {
 };
 
 export default Index;
+
+
+//links aren't working please fix// Header on page 2 //
