@@ -1,0 +1,6 @@
+Format structure for users and forkers:
+
+structure v2.0.0
+scaffolding agent fail due to overload traffic of API callouts
+
+Testing Jul 18
