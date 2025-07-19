@@ -213,3 +213,5 @@ const Auth: React.FC = () => {
 };
 
 export default Auth;
+
+//missing dev manual override function codes
