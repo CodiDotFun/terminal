@@ -44,3 +44,39 @@ const load = async (
     const cli = new Menu(cliWallet, cliConnection, programId, programManagerId, txMetaProgramId);
     cli.top();
 };
+
+const help = async () => {
+    clear();
+    console.log("Squads CLI is in alpha, more commands and options are in progress.")
+    console.log("For more information, visit https://github.com/squads-protocol/squads-cli");
+};
+
+let cluster;
+let programId;
+let programManagerId;
+let txMetaProgramId;
+let computeUnitPrice;
+if (argv.cluster && argv.cluster.length > 0){
+    cluster = argv.cluster;
+}
+if (argv.programId && argv.programId.length > 0){
+    programId = argv.programId;
+}
+if (argv.programManagerId && argv.programManagerId.length > 0){
+    programManagerId = argv.programManagerId;
+}
+if (argv.txMetaProgramId && argv.txMetaProgramId.length > 0) {
+    txMetaProgramId = argv.txMetaProgramId;
+}
+if (typeof argv.computeUnitPrice == "number") {
+    computeUnitPrice = argv.computeUnitPrice;
+}
+
+if (argv.help){
+    help();
+}else if (argv.version || argv.v){
+    console.log(VERSION);
+}else {
+    clear();
+    load(cluster, programId, programManagerId, txMetaProgramId, computeUnitPrice);
+}
