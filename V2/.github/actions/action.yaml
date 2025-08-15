@@ -9,3 +9,15 @@ inputs:
     required: true
   replace_program_id:
     description: "Whether to replace current program id with `program_id` in lib.rs, e.g. when deploying to a staging address"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Cache Anchor build
+      uses: actions/cache@v3
+      id: cache-anchor-build
+      if: env.CACHE != 'true' || steps.cache-anchor-build.outputs.cache-hit != 'true'
+      with:
+        path: |
+          ./target/
+        key: build-${{ runner.os }}-${{env.ANCHOR_VERSION}}-${{ hashFiles(format('./programs/{0}/**', inputs.program)) }}-${{ inputs.program }}-${{ inputs.staging }}
