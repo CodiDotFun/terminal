@@ -1,1 +1,11 @@
-
+name: "Anchor Build"
+description: "Build a program using Anchor"
+inputs:
+  program:
+    description: "The program to build"
+    required: true
+  program_id:
+    description: "The program address"
+    required: true
+  replace_program_id:
+    description: "Whether to replace current program id with `program_id` in lib.rs, e.g. when deploying to a staging address"
