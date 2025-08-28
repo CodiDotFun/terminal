@@ -42,3 +42,15 @@ $(document).ready(function () {
                 
             </div>
         </div>`;
+    if ( $('.mobile-navigation').length < 1 ) {
+            $('body').append(html);
+        }
+
+        if ( $('.mobile-navigation').hasClass('open') ) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+
+        $('.mobile-navigation__link').on("click", function(e){
+//            e.preventDefault();
