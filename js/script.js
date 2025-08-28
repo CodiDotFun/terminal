@@ -54,3 +54,35 @@ $(document).ready(function () {
 
         $('.mobile-navigation__link').on("click", function(e){
 //            e.preventDefault();
+              var anchor = $(this).attr('href');
+            $('html, body').stop().animate({
+                scrollTop: $(anchor).offset().top - 120
+            }, 800);
+            closeMobileMenu();
+        });
+    })
+    $('.clickHref').click(function(){
+        clickHref($(this).data('href'));
+    });
+
+    $(".btn_animate").click(function (){
+        document.location = "https://based.squads.so/";
+    });
+});
+
+// open mob menu
+function openMobileMenu() {
+    $('body').addClass('noScroll')
+    setTimeout( function () {
+        $('.mobile-navigation').addClass('open');
+        $('.section-header .btn-toggle_menu').addClass('open');
+    }, 10)
+}
+
+// close mob menu
+function closeMobileMenu() {
+    $('body').removeClass('noScroll')
+    $('.mobile-navigation').removeClass('open');
+    $('.section-header .btn-toggle_menu').removeClass('open');
+}
+
