@@ -17,3 +17,28 @@ $(document).ready(function () {
                     for (var i in menuList) {
                         html += `<li class="mobile-navigation__item"><a href="`+menuList[i].attr+`" class="mobile-navigation__link">`+menuList[i].name+`</a></li>`
                     }
+    html += `</ul>
+                </nav>
+                
+                <div class="mobile-event">
+                    <a href="https://v3.squads.so/" target="_blank" class="btn-launch-app">
+                        <div class="box-ratio">
+                            <div class="content">
+                                <div class="box-container">
+                                    <p class="title">Launch App</p>
+                                    <i class="icon arrow-diagonally"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="mobile-design-elements">
+                    <i class="icon plus icon-top-left"></i>
+                    <i class="icon plus icon-top-right"></i>
+                    <i class="icon plus icon-bottom-left"></i>
+                    <i class="icon plus icon-bottom-right"></i>
+                </div>
+                
+            </div>
+        </div>`;
